@@ -1,0 +1,25 @@
+{
+  "name": "gunun-ingilizce-kelimesi",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon app.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gulalicelik/gunun-ingilizce-kelimesi.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/gulalicelik/gunun-ingilizce-kelimesi/issues"
+  },
+  "homepage": "https://github.com/gulalicelik/gunun-ingilizce-kelimesi#readme",
+  "dependencies": {
+    "express": "^4.18.2",
+    "nodemon": "^2.0.20"
+  }
+}
