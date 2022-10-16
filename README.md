@@ -1,0 +1,1 @@
+# gunun-ingilizce-kelimesi
