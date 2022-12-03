@@ -1,6 +1,6 @@
 ## Günün İngilizce Kelimesi
 
-Edit your .env files 
+Edit your .env file
     
     PORT=3000
     DB_DIALECT=mysql

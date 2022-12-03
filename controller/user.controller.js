@@ -1,7 +1,8 @@
 const db = require("../models");
 const User = db.user;
 const bcrypt = require('bcrypt');
-const validator = require('../utility/validators.js');
+const jwt = require('jsonwebtoken');
+
 
 const signUp = async (req, res) => {
     // user signup using email and password bcrypt
@@ -31,7 +32,7 @@ const signUp = async (req, res) => {
     res.send({
         "status" : "error",
         "message": "User already exists",
-        "email"   : row.email,
+        "email"  : row.email,
     })
 }
 
@@ -42,10 +43,19 @@ const signIn = async (req, res) => {
     if (user) {
         const validPassword = bcrypt.compareSync(password, user.password);
         if (validPassword) {
+            // generate jwt token for user
+            const token = jwt.sign({
+                id      : user.id,
+                username: user.username,
+                email   : user.email,
+            }, process.env.TOKEN_SECRET, {
+                expiresIn: '1h'
+            });
             res.send({
                 "status" : "success",
                 "message": "User logged in successfully",
-                data     : user
+                "token"  : token,
+                "data"   : user
             })
             return;
         }
