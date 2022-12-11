@@ -6,6 +6,8 @@ exports.validateSignIn = [
         .normalizeEmail()
         .not()
         .isEmpty()
+        .withMessage('Email is required')
+        .isEmail()
         .withMessage('Invalid email address!')
         .bail(),
     check('password')
