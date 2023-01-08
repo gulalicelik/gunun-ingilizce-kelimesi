@@ -6,15 +6,6 @@ const routeManager = (app) => {
     app.use('/category', categoryRoute);
     app.use('/user', userRoute);
 
-
-    // 404 handler
-    app.use(function (req, res, next) {
-        res.status(404).json({
-            status: 'fail',
-            code  : 404,
-            error : `Can't find ${req.originalUrl}`
-        });
-    });
 }
 
 module.exports = routeManager;

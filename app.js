@@ -30,6 +30,14 @@ app.use(function (err, req, res, next) {
     });
 });
 
+// 404 handler
+app.use(function (req, res, next) {
+    res.status(404).json({
+        status: 'fail',
+        code  : 404,
+        error : `Can't find ${req.originalUrl}`
+    });
+});
 
 
 app.listen(process.env.PORT)
