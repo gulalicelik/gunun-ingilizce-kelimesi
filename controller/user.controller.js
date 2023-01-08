@@ -2,6 +2,7 @@ const db = require("../models");
 const User = db.user;
 const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
+const logger = require('../config/logger');
 
 
 const signUp = async (req, res) => {
@@ -51,6 +52,7 @@ const signIn = async (req, res) => {
             }, process.env.TOKEN_SECRET, {
                 expiresIn: '1h'
             });
+            logger.info(`User ${user.username} logged in successfully`);
             res.send({
                 "status" : "success",
                 "message": "User logged in successfully",
