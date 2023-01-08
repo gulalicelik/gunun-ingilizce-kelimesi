@@ -5,6 +5,14 @@ const routeManager = (app) => {
     app.use('/word', wordRoute);
     app.use('/category', categoryRoute);
     app.use('/user', userRoute);
+
+
+    app.all("*", (req, res) => {
+        res.status(404).send({
+            status: "failed",
+            message: "Not Found"
+        })
+    });
 }
 
 module.exports = routeManager;

@@ -11,10 +11,6 @@ const bodyParser = require('body-parser')
 app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({ extended: false }));
 
-
-routeManager(app)
-
-
 db.sequelize.sync()
     .then(() => {
         console.log("sync db.");
@@ -22,6 +18,18 @@ db.sequelize.sync()
     .catch((err) => {
         console.log("Failed to sync db: " + err.message);
     });
+
+
+routeManager(app)
+
+
+// error handler
+app.use(function (err, req, res, next) {
+    res.status(500).send({
+        status: "failed",
+        message: err.message
+    })
+});
 
 
 app.listen(process.env.PORT)
