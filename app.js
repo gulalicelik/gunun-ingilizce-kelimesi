@@ -4,7 +4,7 @@ const express = require('express')
 const app = express()
 const routeManager = require('./route/route.manager.js')
 const db = require("./models/index");
-
+const logger = require('./config/logger.js')
 const bodyParser = require('body-parser')
 
 
@@ -25,6 +25,7 @@ routeManager(app)
 
 // error handler
 app.use(function (err, req, res, next) {
+    logger.error( `request ip address: ${req.ip} -> ${err.message}`);
     res.status(500).send({
         status: "failed",
         message: err.message
