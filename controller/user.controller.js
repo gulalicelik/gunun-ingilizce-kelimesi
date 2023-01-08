@@ -2,6 +2,7 @@ const db = require("../models");
 const User = db.user;
 const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
+const logger =  require('../config/logger');
 
 
 const signUp = async (req, res) => {
@@ -39,10 +40,13 @@ const signUp = async (req, res) => {
 const signIn = async (req, res) => {
     // user signin using email and password bcrypt
     const {email, password} = req.body;
+    logger.info(`user sign in request received from ${email} -> ip address: ${req.ip}`);
     const user = await User.findOne({where: {email}});
     if (user) {
+        logger.info(`user found with email ${email} and user id is ${user.id} -> ip address: ${req.ip}`);
         const validPassword = bcrypt.compareSync(password, user.password);
         if (validPassword) {
+            logger.info(`user password matched for user id ${user.id} -> ip address: ${req.ip}`);
             // generate jwt token for user
             const token = jwt.sign({
                 id      : user.id,
@@ -51,15 +55,18 @@ const signIn = async (req, res) => {
             }, process.env.TOKEN_SECRET, {
                 expiresIn: '1h'
             });
+            logger.info(`jwt token generated for user id ${user.id} -> ip address: ${req.ip}`);
             res.send({
                 "status" : "success",
                 "message": "User logged in successfully",
                 "token"  : token,
                 "data"   : user
             })
+            logger.info(`User ${user.username} logged in successfully -> ip address: ${req.ip}`);
             return;
         }
     }
+    logger.error(`${email} cannot logged in -> ip address: ${req.ip}`);
     res.send({
         "status" : "error",
         "message": "Invalid email or password",
