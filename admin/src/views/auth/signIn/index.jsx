@@ -70,20 +70,17 @@ function SignIn() {
   );
   const [show, setShow] = React.useState(false);
   const [email, setEmail] = React.useState("");
-  const [passwd, setPasswd] = React.useState("");
+  const [password, setPasswd] = React.useState("");
 
-  const handleChange = (e,info) => {
-
-    if(info == "mail"){
-      setEmail(e.target.value)
-    }else{
-      setPasswd(e.target.value)
-    }
-  };
   const handleClick = () => setShow(!show);
 
   const handleLogin = () => {
-    axios.get("").then()
+    axios.post("http://localhost:3000/user/signin", {email, password}).then((response)=>{
+      console.log(response);
+      localStorage.setItem("token",response.data.token);
+    }).catch((e)=>{
+      console.log(e);
+    });
   }
 
   return (
@@ -123,29 +120,29 @@ function SignIn() {
           mx={{ base: "auto", lg: "unset" }}
           me='auto'
           mb={{ base: "20px", md: "auto" }}>
-          <Button
-            fontSize='sm'
-            me='0px'
-            mb='26px'
-            py='15px'
-            h='50px'
-            borderRadius='16px'
-            bg={googleBg}
-            color={googleText}
-            fontWeight='500'
-            _hover={googleHover}
-            _active={googleActive}
-            _focus={googleActive}>
-            <Icon as={FcGoogle} w='20px' h='20px' me='10px' />
-            Sign in with Google
-          </Button>
-          <Flex align='center' mb='25px'>
-            <HSeparator />
-            <Text color='gray.400' mx='14px'>
-              or
-            </Text>
-            <HSeparator />
-          </Flex>
+          {/*<Button*/}
+          {/*  fontSize='sm'*/}
+          {/*  me='0px'*/}
+          {/*  mb='26px'*/}
+          {/*  py='15px'*/}
+          {/*  h='50px'*/}
+          {/*  borderRadius='16px'*/}
+          {/*  bg={googleBg}*/}
+          {/*  color={googleText}*/}
+          {/*  fontWeight='500'*/}
+          {/*  _hover={googleHover}*/}
+          {/*  _active={googleActive}*/}
+          {/*  _focus={googleActive}>*/}
+          {/*  <Icon as={FcGoogle} w='20px' h='20px' me='10px' />*/}
+          {/*  Sign in with Google*/}
+          {/*</Button>*/}
+          {/*<Flex align='center' mb='25px'>*/}
+          {/*  <HSeparator />*/}
+          {/*  <Text color='gray.400' mx='14px'>*/}
+          {/*    or*/}
+          {/*  </Text>*/}
+          {/*  <HSeparator />*/}
+          {/*</Flex>*/}
           <FormControl>
             <FormLabel
               display='flex'
