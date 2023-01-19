@@ -48,6 +48,9 @@ import { FcGoogle } from "react-icons/fc";
 import { MdOutlineRemoveRedEye } from "react-icons/md";
 import { RiEyeCloseLine } from "react-icons/ri";
 
+import axios from "axios";
+
+
 function SignIn() {
   // Chakra color mode
   const textColor = useColorModeValue("navy.700", "white");
@@ -66,7 +69,23 @@ function SignIn() {
     { bg: "whiteAlpha.200" }
   );
   const [show, setShow] = React.useState(false);
+  const [email, setEmail] = React.useState("");
+  const [passwd, setPasswd] = React.useState("");
+
+  const handleChange = (e,info) => {
+
+    if(info == "mail"){
+      setEmail(e.target.value)
+    }else{
+      setPasswd(e.target.value)
+    }
+  };
   const handleClick = () => setShow(!show);
+
+  const handleLogin = () => {
+    axios.get("").then()
+  }
+
   return (
     <DefaultAuth illustrationBackground={illustration} image={illustration}>
       <Flex
@@ -147,6 +166,7 @@ function SignIn() {
               mb='24px'
               fontWeight='500'
               size='lg'
+              onChange={(e) => setEmail(e.target.value)}
             />
             <FormLabel
               ms='4px'
@@ -165,6 +185,7 @@ function SignIn() {
                 size='lg'
                 type={show ? "text" : "password"}
                 variant='auth'
+                onChange={(e) => setPasswd(e.target.value)}
               />
               <InputRightElement display='flex' alignItems='center' mt='4px'>
                 <Icon
@@ -207,7 +228,8 @@ function SignIn() {
               fontWeight='500'
               w='100%'
               h='50'
-              mb='24px'>
+              mb='24px'
+            onClick={handleLogin}>
               Sign In
             </Button>
           </FormControl>
