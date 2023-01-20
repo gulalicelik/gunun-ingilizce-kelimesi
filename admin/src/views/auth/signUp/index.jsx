@@ -1,25 +1,4 @@
 /* eslint-disable */
-/*!
-  _   _  ___  ____  ___ ________  _   _   _   _ ___   
- | | | |/ _ \|  _ \|_ _|__  / _ \| \ | | | | | |_ _| 
- | |_| | | | | |_) || |  / / | | |  \| | | | | || | 
- |  _  | |_| |  _ < | | / /| |_| | |\  | | |_| || |
- |_| |_|\___/|_| \_\___/____\___/|_| \_|  \___/|___|
-                                                                                                                                                                                                                                                                                                                                       
-=========================================================
-* Horizon UI - v1.1.0
-=========================================================
-
-* Product Page: https://www.horizon-ui.com/
-* Copyright 2022 Horizon UI (https://www.horizon-ui.com/)
-
-* Designed and Coded by Simmmple
-
-=========================================================
-
-* The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
-
-*/
 
 import React from "react";
 import {NavLink} from "react-router-dom";
@@ -258,35 +237,35 @@ function SignIn() {
                             </InputRightElement>
                         </InputGroup>
 
-                        <FormLabel
-                            ms='4px'
-                            fontSize='sm'
-                            fontWeight='500'
-                            color={textColor}
-                            display='flex'>
-                            Retype Password<Text color={brandStars}>*</Text>
-                        </FormLabel>
+                        {/*<FormLabel*/}
+                        {/*    ms='4px'*/}
+                        {/*    fontSize='sm'*/}
+                        {/*    fontWeight='500'*/}
+                        {/*    color={textColor}*/}
+                        {/*    display='flex'>*/}
+                        {/*    Retype Password<Text color={brandStars}>*</Text>*/}
+                        {/*</FormLabel>*/}
 
-                        <InputGroup size='md'>
-                            <Input
-                                isRequired={true}
-                                fontSize='sm'
-                                placeholder='Please retype your password'
-                                mb='24px'
-                                size='lg'
-                                type={show ? "text" : "password"}
-                                variant='auth'
-                                onChange={(e) => setRePasswd(e.target.value)}
-                            />
-                            <InputRightElement display='flex' alignItems='center' mt='4px'>
-                                <Icon
-                                    color={textColorSecondary}
-                                    _hover={{cursor: "pointer"}}
-                                    as={show ? RiEyeCloseLine : MdOutlineRemoveRedEye}
-                                    onClick={handleClick}
-                                />
-                            </InputRightElement>
-                        </InputGroup>
+                        {/*<InputGroup size='md'>*/}
+                        {/*    <Input*/}
+                        {/*        isRequired={true}*/}
+                        {/*        fontSize='sm'*/}
+                        {/*        placeholder='Please retype your password'*/}
+                        {/*        mb='24px'*/}
+                        {/*        size='lg'*/}
+                        {/*        type={show ? "text" : "password"}*/}
+                        {/*        variant='auth'*/}
+                        {/*        onChange={(e) => setRePasswd(e.target.value)}*/}
+                        {/*    />*/}
+                        {/*    <InputRightElement display='flex' alignItems='center' mt='4px'>*/}
+                        {/*        <Icon*/}
+                        {/*            color={textColorSecondary}*/}
+                        {/*            _hover={{cursor: "pointer"}}*/}
+                        {/*            as={show ? RiEyeCloseLine : MdOutlineRemoveRedEye}*/}
+                        {/*            onClick={handleClick}*/}
+                        {/*        />*/}
+                        {/*    </InputRightElement>*/}
+                        {/*</InputGroup>*/}
 
                         <Flex justifyContent='space-between' align='center' mb='24px'>
                             {/*<FormControl display='flex' alignItems='center'>*/}
