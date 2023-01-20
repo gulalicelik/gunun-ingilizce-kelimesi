@@ -20,14 +20,6 @@ function SidebarContent(props) {
         </Box>
       </Stack>
 
-      <Box
-        ps='20px'
-        pe={{ md: "16px", "2xl": "0px" }}
-        mt='60px'
-        mb='40px'
-        borderRadius='30px'>
-        <SidebarCard />
-      </Box>
     </Flex>
   );
 }

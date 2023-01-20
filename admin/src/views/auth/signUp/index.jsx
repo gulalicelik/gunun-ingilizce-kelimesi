@@ -70,7 +70,7 @@ function SignIn() {
     const [firstname, setFirstname] = React.useState("");
     const [lastname, setLastname] = React.useState("");
     const [email, setEmail] = React.useState("");
-    const [password, setPasswd] = React.useState("");
+    const [password, setPassword] = React.useState("");
     const [rePasswd, setRePasswd] = React.useState("");
 
     const handleClick = () => setShow(!show);
@@ -246,7 +246,7 @@ function SignIn() {
                                 size='lg'
                                 type={show ? "text" : "password"}
                                 variant='auth'
-                                onChange={(e) => setPasswd(e.target.value)}
+                                onChange={(e) => setPassword(e.target.value)}
                             />
                             <InputRightElement display='flex' alignItems='center' mt='4px'>
                                 <Icon

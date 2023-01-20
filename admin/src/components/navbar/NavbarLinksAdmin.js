@@ -26,6 +26,8 @@ import { MdNotificationsNone, MdInfoOutline } from "react-icons/md";
 import { FaEthereum } from "react-icons/fa";
 import routes from "routes.js";
 import { ThemeEditor } from "./ThemeEditor";
+import {NavLink} from "react-router-dom";
+
 export default function HeaderLinks(props) {
   const { secondary } = props;
   // Chakra Color Mode
@@ -260,7 +262,9 @@ export default function HeaderLinks(props) {
               color='red.400'
               borderRadius='8px'
               px='14px'>
-              <Text fontSize='sm'>Log out</Text>
+              <NavLink to='/auth/sign-ip'>
+                <Text fontSize='sm'>Log out</Text>
+              </NavLink>
             </MenuItem>
           </Flex>
         </MenuList>
