@@ -68,7 +68,19 @@ const signIn = async (req, res) => {
     })
 }
 
+
+const getAllUsers = async (req, res) => {
+    const users = await User.findAll();
+    res.send({
+        "status" : "success",
+        "message": "Users fetched successfully",
+        "data"   : users
+    });
+}
+
+
 module.exports = {
     signUp,
-    signIn
+    signIn,
+    getAllUsers
 }
