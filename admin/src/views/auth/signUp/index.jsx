@@ -55,7 +55,7 @@ function SignIn() {
     const handleClick = () => setShow(!show);
 
     const handleRegister = () => {
-        axios.post("http://localhost:3000/user/signup", {firstname, lastname, username, email, password}).then((response)=>{
+        axios.post("http://ec2-50-19-171-227.compute-1.amazonaws.com:3000/user/signup", {firstname, lastname, username, email, password}).then((response)=>{
             console.log(response);
         }).catch((e)=>{
             console.log(e);

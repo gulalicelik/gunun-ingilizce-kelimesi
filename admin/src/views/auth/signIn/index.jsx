@@ -75,7 +75,7 @@ function SignIn() {
   const handleClick = () => setShow(!show);
 
   const handleLogin = () => {
-    axios.post("http://localhost:3000/user/signin", {email, password}).then((response)=>{
+    axios.post("http://ec2-50-19-171-227.compute-1.amazonaws.com:3000/user/signin", {email, password}).then((response)=>{
       console.log(response);
       localStorage.setItem("token",response.data.token);
     }).catch((e)=>{
