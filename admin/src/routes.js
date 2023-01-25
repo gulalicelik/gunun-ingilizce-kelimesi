@@ -17,9 +17,12 @@ import DataTables from "views/admin/dataTables";
 import Users from "views/admin/users";
 
 
+
 // Auth Imports
 import SignInCentered from "views/auth/signIn";
 import SignUpCentered from "views/auth/signUp";
+
+import Words from "./views/admin/words";
 
 const routes = [
   {
@@ -78,6 +81,13 @@ const routes = [
     path: "/users-all",
     icon: <Icon as={MdLock} width='20px' height='20px' color='inherit' />,
     component: Users,  },
+
+  {
+    name: "Words",
+    layout: "/admin",
+    path: "/words",
+    icon: <Icon as={MdLock} width='20px' height='20px' color='inherit' />,
+    component: Words  },
 ];
 
 export default routes;

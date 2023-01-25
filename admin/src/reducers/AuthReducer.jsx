@@ -1,4 +1,4 @@
-const loggedUser = (state, todoId) => {
+const loggedUser = (state) => {
     const token = localStorage.getItem('token');
     // check if token is valid
     if (token) {
