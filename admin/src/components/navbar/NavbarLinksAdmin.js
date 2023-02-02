@@ -27,6 +27,7 @@ import { FaEthereum } from "react-icons/fa";
 import routes from "routes.js";
 import { ThemeEditor } from "./ThemeEditor";
 import {NavLink} from "react-router-dom";
+import {MainContext, useContext} from "../../contexts/MainContext";
 
 export default function HeaderLinks(props) {
   const { secondary } = props;
@@ -44,6 +45,7 @@ export default function HeaderLinks(props) {
     "14px 17px 40px 4px rgba(112, 144, 176, 0.06)"
   );
   const borderButton = useColorModeValue("secondaryGray.500", "whiteAlpha.200");
+  const {setIsLogged} = useContext(MainContext)
   return (
     <Flex
       w={{ sm: "100%", md: "auto" }}
@@ -262,7 +264,10 @@ export default function HeaderLinks(props) {
               color='red.400'
               borderRadius='8px'
               px='14px'>
-              <NavLink to='/auth/sign-ip'>
+              <NavLink  onClick={()=> {
+                setIsLogged(false);
+                localStorage.removeItem("token");
+              }} to='/auth/sign-in'>
                 <Text fontSize='sm'>Log out</Text>
               </NavLink>
             </MenuItem>
