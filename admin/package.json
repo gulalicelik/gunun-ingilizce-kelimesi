@@ -1,53 +1,47 @@
 {
-  "homepage": "https://horizon-ui.com/horizon-ui-chakra",
-  "name": "horizon-ui-chakra",
-  "version": "1.0.1",
+  "name": "uko-react",
+  "version": "0.1.0",
   "private": true,
+  "type": "module",
   "dependencies": {
-    "@chakra-ui/icons": "^1.1.5",
-    "@chakra-ui/react": "1.8.8",
-    "@chakra-ui/system": "^1.12.1",
-    "@chakra-ui/theme-tools": "^1.3.6",
-    "@emotion/cache": "^11.7.1",
-    "@emotion/react": "^11.4.1",
-    "@emotion/styled": "^11.3.0",
-    "@hypertheme-editor/chakra-ui": "^0.1.5",
-    "@testing-library/jest-dom": "^5.14.1",
-    "@testing-library/react": "^11.2.7",
-    "@testing-library/user-event": "^12.8.3",
-    "apexcharts": "^3.35.2",
-    "axios": "^1.2.3",
-    "babel-cli": "^6.26.0",
-    "babel-preset-es2015": "^6.24.1",
-    "babel-preset-react": "^6.24.1",
-    "babel-register": "^6.26.0",
-    "framer-motion": "^4.1.17",
-    "react": "17.0.2",
-    "react-apexcharts": "^1.4.0",
-    "react-calendar": "^3.7.0",
-    "react-custom-scrollbars-2": "^4.2.1",
-    "react-dom": "17.0.2",
-    "react-dropzone": "^12.0.4",
-    "react-icons": "^4.3.1",
-    "react-is": "^18.0.0",
-    "react-router-dom": "^5.3.0",
-    "react-scripts": "5.0.0",
+    "@emotion/react": "^11.6.0",
+    "@emotion/styled": "^11.6.0",
+    "@mui/icons-material": "^5.1.0",
+    "@mui/lab": "^5.0.0-alpha.54",
+    "@mui/material": "^5.1.0",
+    "@mui/styled-engine-sc": "^5.1.0",
+    "@types/node": "^12.0.0",
+    "@types/react": "^17.0.0",
+    "@types/react-dom": "^17.0.0",
+    "apexcharts": "^3.28.3",
+    "axios": "^0.23.0",
+    "axios-mock-adapter": "^1.20.0",
+    "date-fns": "^2.23.0",
+    "formik": "^2.2.9",
+    "history": "5",
+    "i18next": "^21.3.3",
+    "jsonwebtoken": "^8.5.1",
+    "jwt-decode": "^3.1.2",
+    "nprogress": "^0.2.0",
+    "react": "^17.0.2",
+    "react-apexcharts": "^1.3.9",
+    "react-dom": "^17.0.2",
+    "react-hot-toast": "^2.1.1",
+    "react-image-lightbox": "^5.1.4",
+    "react-router-dom": "6",
+    "react-scripts": "4.0.3",
     "react-table": "^7.7.0",
-    "stylis": "^4.1.1",
-    "stylis-plugin-rtl": "2.0.2",
-    "web-vitals": "^1.1.2"
+    "simplebar-react": "^2.3.5",
+    "stylis": "^4.0.10",
+    "typescript": "^4.1.2",
+    "yup": "^0.32.9"
   },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "predeploy": "npm run build",
-    "deploy": "gh-pages -d build",
-    "sitemap": "babel-node ./sitemap-builder.js"
-  },
-  "resolutions": {
-    "react-error-overlay": "6.0.9"
+    "fix:prettier": "prettier --write ."
   },
   "eslintConfig": {
     "extends": [
@@ -68,6 +62,9 @@
     ]
   },
   "devDependencies": {
-    "gh-pages": "^3.2.3"
+    "@types/jsonwebtoken": "^8.5.5",
+    "@types/nprogress": "^0.2.0",
+    "@types/react-table": "^7.7.2",
+    "prettier": "^2.4.1"
   }
 }
