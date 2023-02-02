@@ -55,7 +55,7 @@ function SignIn() {
     const handleClick = () => setShow(!show);
 
     const handleRegister = () => {
-        axios.post("http://localhost:4444/user/signup", {firstname, lastname, username, email, password}).then((response)=>{
+        axios.post(`${process.env.REACT_APP_API_URL}/user/signup`, {firstname, lastname, username, email, password}).then((response)=>{
             console.log(response);
         }).catch((e)=>{
             console.log(e);

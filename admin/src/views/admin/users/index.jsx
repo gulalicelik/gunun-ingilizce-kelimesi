@@ -16,11 +16,12 @@ export default function Users() {
     const [data, setData] = React.useState([]);
 
 
+
     useEffect(() => {
-        axios.get(`${process.env.API_URL}/user/get-all`, {
+        var token = localStorage.getItem("token");
+        axios.get(`${process.env.REACT_APP_API_URL}/user/get-all`, {
             headers: {
-                // 'Authorization': 'Bearer ' + localStorage.getItem("token")
-                'Authorization': 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MiwidXNlcm5hbWUiOiJndWxlbmRhbSIsImVtYWlsIjoiZ3VsZW5kYW0uaXNpa0ByYXN0bW9iaWxlLmNvbSIsImlhdCI6MTY3NDU5MjE2NSwiZXhwIjoxNjc0NTk1NzY1fQ.16WgvHrbFcAqJYkudDO2sJSqZvjPMRaCwwp582yB7EE'
+                'Authorization': 'Bearer ' + token
             }
         }).then((response) => {
 
