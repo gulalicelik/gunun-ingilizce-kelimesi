@@ -5,18 +5,18 @@ module.exports = {
         env_dev : {
             name        : 'gik-development',
             NODE_ENV    : 'development',
-            PORT        : 3000,
+            PORT        : 4444,
             TOKEN_SECRET: "Malatya44"
         },
         env_test: {
             name        : "gik-test",
-            PORT        : 3001,
+            PORT        : 4445,
             NODE_ENV    : "test",
             TOKEN_SECRET: "Malatya44"
         },
         env_prod: {
             name        : "gik-prod",
-            PORT        : 3002,
+            PORT        : 4446,
             NODE_ENV    : "production",
             TOKEN_SECRET: "Malatya44"
         },
